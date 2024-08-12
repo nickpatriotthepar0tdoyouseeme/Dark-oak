@@ -232,7 +232,7 @@
             const message = document.getElementById('chat-message').value;
             const chatBox = document.getElementById('chat-box');
 
-            const username = prompt("Enter your username:");
+            const username = prompt("Enter your username (format :@+username):");
 
             if (mutedUsers.includes(username)) {
                 alert('You are muted and cannot send messages.');
