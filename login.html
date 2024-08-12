@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 2px #ff0000;
+            width: 300px;
+        }
+
+        h2 {
+            color: #ff0000;
+            text-align: center;
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ff0000;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-button:hover {
+            background-color: #cc0000;
+        }
+
+        .error-message {
+            color: #ff0000;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <div class="input-field">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="input-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div class="input-field">
+            <label for="passkey">Pass Key</label>
+            <input type="text" id="passkey" placeholder="Enter pass key">
+        </div>
+        <button class="login-button" onclick="validateCredentials()">Sign In</button>
+        <div class="error-message" id="error-message"></div>
+    </div>
+
+    <script>
+        function validateCredentials() {
+            const validUsers = {
+                'V¡P€R♤': { password: 'JKTRDX193', role: 'admin' },
+                'Cr@Xer': { password: 'jfwhhwyj017', role: 'permit+' },
+                'Chip£r': { password: 'hsfubep071', role: 'permit' },
+                'Pro~xy': { password: 'hgshgu910', role: 'Verified' },
+                'Neon': { password: 'xxxx', role: 'member' },
+                'Beta': { password: 'xxxx', role: 'member' },
+                'Zymens': { password: 'xxxx', role: 'member' },
+                'Darkred': { password: 'xxxx', role: 'member' },
+                'Firewall': { password: 'xxxx', role: 'member' },
+                'April': { password: 'xxxx', role: 'member' },
+            };
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const passkey = document.getElementById('passkey').value;
+
+            const user = validUsers[username];
+            const passkeyValid = passkey === 'dark♤oak';
+
+            if (user && user.password === password && passkeyValid) {
+                window.location.href = 'page.html';
+            } else {
+                document.getElementById('error-message').innerText = 'Invalid Credentials';
+            }
+        }
+    </script>
+</body>
+</html>
