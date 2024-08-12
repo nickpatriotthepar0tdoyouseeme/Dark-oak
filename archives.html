@@ -59,20 +59,21 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s;
+            margin-bottom: 20px;
         }
 
         button:hover {
             background-color: #00cc7a;
         }
 
-        #hiddenText, #errorMessage {
+        .hiddenText, .errorMessage {
             display: none;
-            margin-top: 20px;
+            margin-top: 10px;
             font-size: 18px;
             font-weight: bold;
         }
 
-        #errorMessage {
+        .errorMessage {
             color: #ff0033;
         }
 
@@ -102,14 +103,31 @@
     <div id="container">
         <h1><img src="bn.jfif" alt="Placeholder"></h1>
         <h2>Enter Your PINs</h2>
+
         <input type="password" id="pinInput1" placeholder="Enter PIN 1" maxlength="4">
+        <button onclick="checkPin(1)">Submit</button>
+        <p id="hiddenText1" class="hiddenText">Access Granted: Message 1.</p>
+        <p id="errorMessage1" class="errorMessage">Access Denied.</p>
+
         <input type="password" id="pinInput2" placeholder="Enter PIN 2" maxlength="4">
+        <button onclick="checkPin(2)">Submit</button>
+        <p id="hiddenText2" class="hiddenText">Access Granted: Message 2.</p>
+        <p id="errorMessage2" class="errorMessage">Access Denied.</p>
+
         <input type="password" id="pinInput3" placeholder="Enter PIN 3" maxlength="4">
+        <button onclick="checkPin(3)">Submit</button>
+        <p id="hiddenText3" class="hiddenText">Access Granted: Message 3.</p>
+        <p id="errorMessage3" class="errorMessage">Access Denied.</p>
+
         <input type="password" id="pinInput4" placeholder="Enter PIN 4" maxlength="4">
+        <button onclick="checkPin(4)">Submit</button>
+        <p id="hiddenText4" class="hiddenText">Access Granted: Message 4.</p>
+        <p id="errorMessage4" class="errorMessage">Access Denied.</p>
+
         <input type="password" id="pinInput5" placeholder="Enter PIN 5" maxlength="4">
-        <button onclick="checkPins()">Submit</button>
-        <p id="hiddenText">Access Granted.</p>
-        <p id="errorMessage">Access Denied.</p>
+        <button onclick="checkPin(5)">Submit</button>
+        <p id="hiddenText5" class="hiddenText">Access Granted: Message 5.</p>
+        <p id="errorMessage5" class="errorMessage">Access Denied.</p>
     </div>
 
     <footer>
@@ -118,22 +136,20 @@
     </footer>
 
     <script>
-        function checkPins() {
-            const correctPins = ["9937", "3356", "3316", "1105", "5542"];
-            const enteredPins = [
-                document.getElementById('pinInput1').value,
-                document.getElementById('pinInput2').value,
-                document.getElementById('pinInput3').value,
-                document.getElementById('pinInput4').value,
-                document.getElementById('pinInput5').value
-            ];
+        function checkPin(pinNumber) {
+            const correctPins = {
+                1: "9937",
+                2: "3356",
+                3: "3316",
+                4: "1105",
+                5: "5542"
+            };
 
-            const hiddenText = document.getElementById('hiddenText');
-            const errorMessage = document.getElementById('errorMessage');
+            const enteredPin = document.getElementById('pinInput' + pinNumber).value;
+            const hiddenText = document.getElementById('hiddenText' + pinNumber);
+            const errorMessage = document.getElementById('errorMessage' + pinNumber);
 
-            const allCorrect = enteredPins.every((pin, index) => pin === correctPins[index]);
-
-            if (allCorrect) {
+            if (enteredPin === correctPins[pinNumber]) {
                 hiddenText.style.display = 'block';
                 errorMessage.style.display = 'none';
             } else {
