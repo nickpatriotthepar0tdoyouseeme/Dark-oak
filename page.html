@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Oak</title>
+    <style>
+        body {
+            background-color: #8B0000; /* Dark Red Background */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid gold;
+            box-shadow: 0px 0px 10px gold;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            color: #ff0000; /* Red Text */
+            text-shadow: 2px 2px 4px #000000;
+            margin: 0;
+        }
+
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ff0000;
+        }
+
+        .post-section {
+            margin-top: 30px;
+        }
+
+        .post-section input,
+        .post-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .post-section input[type="file"] {
+            padding: 0;
+        }
+
+        .post-section button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .post-section button:hover {
+            background-color: #cc0000;
+        }
+
+        .posts-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .post {
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            color: white;
+            position: relative;
+        }
+
+        .post .pin {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: gold;
+        }
+
+        .chat-section {
+            margin-top: 50px;
+            text-align: left;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ff0000;
+        }
+
+        .chat-section .chat-box {
+            height: 200px;
+            overflow-y: scroll;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .chat-section .chat-box p {
+            margin: 5px 0;
+        }
+
+        .chat-section input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .chat-section button {
+            padding: 10px;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .chat-section button:hover {
+            background-color: #cc0000;
+        }
+
+        .muted {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Dark Oak</h1>
+        <img src="bn.jpg" alt="Placeholder">
+    </div>
+
+    <div class="content">
+        <h2>Welcome</h2>
+        <div class="post-section">
+            <h3>Post a Message</h3>
+            <input type="text" id="post-title" placeholder="Title (Optional)">
+            <textarea id="post-content" rows="4" placeholder="Write your post here..."></textarea>
+            <input type="file" id="post-file">
+            <button onclick="submit
+Post()">Submit Post</button>
+        </div>
+
+        <div class="posts-container" id="posts-container">
+            <h3>Posts</h3>
+            <!-- Posts will appear here -->
+        </div>
+    </div>
+
+    <div class="chat-section">
+        <h3>Chat</h3>
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <input type="text" id="chat-message" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        const allowedUser = 'V¡P€R♤';
+        const allowedPassword = 'JKTRDX193';
+        let mutedUsers = [];
+
+        // Function to handle post submission
+        function submitPost() {
+            const username = prompt("Enter your username:");
+            const password = prompt("Enter your password:");
+
+            if (username === allowedUser && password === allowedPassword) {
+                const title = document.getElementById('post-title').value;
+                const content = document.getElementById('post-content').value;
+                const fileInput = document.getElementById('post-file');
+                const postsContainer = document.getElementById('posts-container');
+
+                let postContent = `<div class="post"><h4>${title}</h4><p>${content}</p>`;
+
+                if (fileInput.files.length > 0) {
+                    const fileName = fileInput.files[0].name;
+                    postContent += `<p><strong>File:</strong> ${fileName}</p>`;
+                }
+
+                postContent += `<span class="pin" onclick="pinPost(this)">📌</span></div>`;
+
+                postsContainer.innerHTML += postContent;
+
+                // Clear inputs after posting
+                document.getElementById('post-title').value = '';
+                document.getElementById('post-content').value = '';
+                document.getElementById('post-file').value = '';
+            } else {
+                alert('Invalid credentials. Only V¡P€R♤ can post.');
+            }
+        }
+
+        // Function to pin a post
+        function pinPost(element) {
+            const post = element.parentElement;
+            const postsContainer = document.getElementById('posts-container');
+
+            postsContainer.removeChild(post);
+            postsContainer.insertAdjacentElement('afterbegin', post);
+        }
+
+        // Function to handle chat messages
+        function sendMessage() {
+            const message = document.getElementById('chat-message').value;
+            const chatBox = document.getElementById('chat-box');
+
+            const username = prompt("Enter your username:");
+
+            if (mutedUsers.includes(username)) {
+                alert('You are muted and cannot send messages.');
+                return;
+            }
+
+            if (username === allowedUser) {
+                const muteUser = prompt("Enter the username to mute (leave blank to send message):");
+
+                if (muteUser) {
+                    mutedUsers.push(muteUser);
+                    chatBox.innerHTML += `<p class="muted">${muteUser} has been muted by V¡P€R♤.</p>`;
+                } else {
+                    chatBox.innerHTML += `<p><strong>${username}:</strong> ${message}</p>`;
+                }
+            } else {
+                chatBox.innerHTML += `<p><strong>${username}:</strong> ${message}</p>`;
+            }
+
+            document.getElementById('chat-message').value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+
+</body>
+
+</html>
