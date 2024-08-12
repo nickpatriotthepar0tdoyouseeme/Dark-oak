@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Oak Leaderboard</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #00ff99;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffdd57;
+            text-shadow: 2px 2px 4px #000000;
+            margin-bottom: 20px;
+        }
+
+        .leaderboard-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .leaderboard-table th,
+        .leaderboard-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #00ff99;
+        }
+
+        .leaderboard-table th {
+            background-color: #333;
+            color: #ffdd57;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .leaderboard-table td {
+            background-color: #222;
+            color: #00ff99;
+            font-size: 16px;
+        }
+
+        .leaderboard-table tr:hover td {
+            background-color: #444;
+        }
+
+        .rank-1 {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .rank-2 {
+            color: silver;
+            font-weight: bold;
+        }
+
+        .rank-3 {
+            color: #cd7f32;
+            font-weight: bold;
+        }
+
+        .role-permit-plus {
+            color: #00ff99;
+            font-weight: bold;
+        }
+
+        .role-permit {
+            color: #00cc7a;
+        }
+
+        .role-verified {
+            color: #ffdd57;
+        }
+
+        .role-member {
+            color: #ff3333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dark Oak Leaderboard</h1>
+    <div class="leaderboard-container">
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank-1">1</td>
+                    <td>V¡P€R♤</td>
+                    <td>12000</td>
+                    <td class="role-permit-plus">Permit+</td>
+                </tr>
+                <tr>
+                    <td class="rank-2">2</td>
+                    <td>Phantom@Root</td>
+                    <td>11500</td>
+                    <td class="role-permit">Permit</td>
+                </tr>
+                <tr>
+                    <td class="rank-3">3</td>
+                    <td>Ne0n_Sh@d0w</td>
+                    <td>11000</td>
+                    <td class="role-permit">Permit</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Crypt0Knight</td>
+                    <td>10500</td>
+                    <td class="role-verified">Verified</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>ZeroD@ylight</td>
+                    <td>10200</td>
+                    <td class="role-verified">Verified</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Dark_Trace</td>
+                    <td>9800</td>
+                    <td class="role-member">Member</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>NightHawk_777</td>
+                    <td>9500</td>
+                    <td class="role-member">Member</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Red_Specter</td>
+                    <td>9200</td>
+                    <td class="role-member">Member</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>BlackWid0w</td>
+                    <td>9000</td>
+                    <td class="role-member">Member</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>EchoN0ise</td>
+                    <td>8800</td>
+                    <td class="role-member">Member</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
