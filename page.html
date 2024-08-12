@@ -165,21 +165,18 @@
             <input type="text" id="post-title" placeholder="Title (Optional)">
             <textarea id="post-content" rows="4" placeholder="Write your post here..."></textarea>
             <input type="file" id="post-file">
-            <button onclick="submit
-Post()">Submit Post</button>
+            <!-- Corrected function call -->
+            <button onclick="submitPost()">Submit Post</button>
         </div>
 
         <div class="posts-container" id="posts-container">
             <h3>Posts</h3>
-           
-            
         </div>
     </div>
 
     <div class="chat-section">
         <h3>Chat</h3>
         <div class="chat-box" id="chat-box">
-           
         </div>
         <input type="text" id="chat-message" placeholder="Type your message...">
         <button onclick="sendMessage()">Send</button>
