@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Oak Goals</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #00ff99;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffdd57;
+            text-shadow: 2px 2px 4px #000000;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+            color: #00ff99;
+        }
+
+        .goals-box {
+            background-color: #333;
+            border: 2px solid #00ff99;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            color: #00ff99;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .goals-box h2 {
+            color: #ffdd57;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dark Oak Goals</h1>
+    <div class="content">
+        <div class="goals-box">
+            <h2>Goals will be set here</h2>
+            <p>1. Achieve top 10 in the leaderboard.</p>
+            <p>2. Complete 5 successful hacks.</p>
+            <p>3. Develop and release a new tool.</p>
+            <p>4. Recruit 10 new members.</p>
+            <p>5. Improve security measures for our community.</p>
+        </div>
+    </div>
+</body>
+
+</html>
