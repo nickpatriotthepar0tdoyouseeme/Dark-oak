@@ -101,14 +101,14 @@
 
     <div id="container">
         <h1><img src="bn.jfif" alt="Placeholder"></h1>
-        <h2>Enter Your PIN</h2>
-        <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="4">
-        <button onclick="checkPin()">Submit</button>
-        <p id="hiddenText">Access granted.
-            target : 4chan.com
-            exploit will be initially accessible at this url:
-            XXXXXXXXXXXXXXXXXXXX
-        </p>
+        <h2>Enter Your PINs</h2>
+        <input type="password" id="pinInput1" placeholder="Enter PIN 1" maxlength="4">
+        <input type="password" id="pinInput2" placeholder="Enter PIN 2" maxlength="4">
+        <input type="password" id="pinInput3" placeholder="Enter PIN 3" maxlength="4">
+        <input type="password" id="pinInput4" placeholder="Enter PIN 4" maxlength="4">
+        <input type="password" id="pinInput5" placeholder="Enter PIN 5" maxlength="4">
+        <button onclick="checkPins()">Submit</button>
+        <p id="hiddenText">Access Granted.</p>
         <p id="errorMessage">Access Denied.</p>
     </div>
 
@@ -118,149 +118,22 @@
     </footer>
 
     <script>
-        function checkPin() {
-            const correctPin = "9937";
-            const enteredPin = document.getElementById('pinInput').value;
+        function checkPins() {
+            const correctPins = ["9937", "3356", "3316", "1105", "5542"];
+            const enteredPins = [
+                document.getElementById('pinInput1').value,
+                document.getElementById('pinInput2').value,
+                document.getElementById('pinInput3').value,
+                document.getElementById('pinInput4').value,
+                document.getElementById('pinInput5').value
+            ];
+
             const hiddenText = document.getElementById('hiddenText');
             const errorMessage = document.getElementById('errorMessage');
 
-            if (enteredPin === correctPin) {
-                hiddenText.style.display = 'block';
-                errorMessage.style.display = 'none';
-            } else {
-                errorMessage.style.display = 'block';
-                hiddenText.style.display = 'none';
-            }
-        }
-    </script>
- <div id="container">
-        <h1><img src="bn.jfif" alt="Placeholder"></h1>
-        <h2>Enter Your PIN</h2>
-        <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="4">
-        <button onclick="checkPin()">Submit</button>
-        <p id="hiddenText">Access granted.
-            target : -
-            exploit will be initially accessible at this url:
-            XXXXXXXXXXXXXXXXXXXX
-        </p>
-        <p id="errorMessage">Access Denied.</p>
-    </div>
+            const allCorrect = enteredPins.every((pin, index) => pin === correctPins[index]);
 
-    <footer>
-        <p>&copy; encrypted by DARK OAK LLC</p>
-        <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
-    </footer>
-
-    <script>
-        function checkPin() {
-            const correctPin = "3356";
-            const enteredPin = document.getElementById('pinInput').value;
-            const hiddenText = document.getElementById('hiddenText');
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (enteredPin === correctPin) {
-                hiddenText.style.display = 'block';
-                errorMessage.style.display = 'none';
-            } else {
-                errorMessage.style.display = 'block';
-                hiddenText.style.display = 'none';
-            }
-        }
-    </script>
- <div id="container">
-        <h1><img src="bn.jfif" alt="Placeholder"></h1>
-        <h2>Enter Your PIN</h2>
-        <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="4">
-        <button onclick="checkPin()">Submit</button>
-        <p id="hiddenText">Access granted.
-            target : -
-            exploit will be initially accessible at this url:
-            XXXXXXXXXXXXXXXXXXXX
-        </p>
-        <p id="errorMessage">Access Denied.</p>
-    </div>
-
-    <footer>
-        <p>&copy; encrypted by DARK OAK LLC</p>
-        <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
-    </footer>
-
-    <script>
-        function checkPin() {
-            const correctPin = "3316";
-            const enteredPin = document.getElementById('pinInput').value;
-            const hiddenText = document.getElementById('hiddenText');
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (enteredPin === correctPin) {
-                hiddenText.style.display = 'block';
-                errorMessage.style.display = 'none';
-            } else {
-                errorMessage.style.display = 'block';
-                hiddenText.style.display = 'none';
-            }
-        }
-    </script>
- <div id="container">
-        <h1><img src="bn.jfif" alt="Placeholder"></h1>
-        <h2>Enter Your PIN</h2>
-        <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="4">
-        <button onclick="checkPin()">Submit</button>
-        <p id="hiddenText">Access granted.
-            target : -
-            exploit will be initially accessible at this url:
-            XXXXXXXXXXXXXXXXXXXX
-        </p>
-        <p id="errorMessage">Access Denied.</p>
-    </div>
-
-    <footer>
-        <p>&copy; encrypted by DARK OAK LLC</p>
-        <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
-    </footer>
-
-    <script>
-        function checkPin() {
-            const correctPin = "1105";
-            const enteredPin = document.getElementById('pinInput').value;
-            const hiddenText = document.getElementById('hiddenText');
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (enteredPin === correctPin) {
-                hiddenText.style.display = 'block';
-                errorMessage.style.display = 'none';
-            } else {
-                errorMessage.style.display = 'block';
-                hiddenText.style.display = 'none';
-            }
-        }
-    </script>
- <div id="container">
-        <h1><img src="bn.jfif" alt="Placeholder"></h1>
-        <h2>Enter Your PIN</h2>
-        <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="4">
-        <button onclick="checkPin()">Submit</button>
-        <p id="hiddenText">Access granted.
-            target : -
-            exploit will be initially accessible at this url:
-            XXXXXXXXXXXXXXXXXXXX
-        </p>
-        <p id="errorMessage">Access Denied.</p>
-    </div>
-
-    <footer>
-        <p>&copy; encrypted by DARK OAK LLC</p>
-        <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
-    </footer>
-
-    <script>
-        function checkPin() {
-            const correctPin = "5542";
-            const enteredPin = document.getElementById('pinInput').value;
-            const hiddenText = document.getElementById('hiddenText');
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (enteredPin === correctPin) {
+            if (allCorrect) {
                 hiddenText.style.display = 'block';
                 errorMessage.style.display = 'none';
             } else {
