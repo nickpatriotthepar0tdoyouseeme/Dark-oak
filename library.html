@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Oak Library</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #00ff99;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffdd57;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .library-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .file-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #333;
+            border: 2px solid #00ff99;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .file-list li:hover {
+            background-color: #444;
+        }
+
+        .file-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .file-description {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #ffdd57;
+        }
+
+        .file-link {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #00ff99;
+            color: #111;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .file-link:hover {
+            background-color: #00cc7a;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dark Oak Library</h1>
+    <div class="library-container">
+        <ul class="file-list">
+            <li>
+                <span class="file-name">Exploit Database - 2024 Edition</span>
+                <p class="file-description">A comprehensive collection of exploits discovered in 2024, categorized by platform and vulnerability type. Includes code samples and proof-of-concept scripts.</p>
+                <a href="files/exploit_database_2024.pdf" class="file-link" download>Download PDF</a>
+            </li>
+            <li>
+                <span class="file-name">Network Scanner Tool</span>
+                <p class="file-description">An advanced network scanning tool for penetration testers. Scans for open ports, services, and vulnerabilities on target machines.</p>
+                <a href="files/network_scanner_tool.exe" class="file-link" download>Download EXE</a>
+            </li>
+            <li>
+                <span class="file-name">Python Script: SQL Injection Tester</span>
+                <p class="file-description">A Python script designed to test SQL injection vulnerabilities on web applications. Fully customizable for different database types.</p>
+                <a href="files/sql_injection_tester.py" class="file-link" download>Download PY</a>
+            </li>
+            <li>
+                <span class="file-name">Anonymous Browsing Guide</span>
+                <p class="file-description">This guide provides step-by-step instructions on how to browse the internet anonymously using various tools and techniques.</p>
+                <a href="files/anonymous_browsing_guide.pdf" class="file-link" download>Download PDF</a>
+            </li>
+            <li>
+                <span class="file-name">Encryption Techniques - Image Reference</span>
+                <p class="file-description">A visual reference showing different encryption techniques applied to images. Useful for learning about steganography.</p>
+                <a href="files/encryption_techniques.jpg" class="file-link" download>Download JPG</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
